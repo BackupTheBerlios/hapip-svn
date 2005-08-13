@@ -1,0 +1,20 @@
+<hibernate-mapping>
+    <class name="Step" table="STEP" discriminator-value="NA">
+        <id name="id" column = "STEP_ID" type="long" >
+            <generator class="native"/>
+        </id>
+        <discriminator 
+                column="TYPE"
+                />
+        <property name="name" column="STEP_NAME"/>
+        <property name="nickname" column="STEP_NICKNAME"/>
+        <property name="startDate" type="timestamp" column="START_DATE" />
+        <property name="endDate"   type="timestamp" column="END_DATE" />
+        <property name="budget"/>
+        <subclass name="Task" discriminator-value="TASK">
+            <set name="resources" >
+                <key colomn="RESOURCE_ID"/>
+                <one-to-many class="Resource"/>
+            </set>
+        </subclass>
+</hibernate-mapping>

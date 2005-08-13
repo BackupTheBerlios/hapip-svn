@@ -1,0 +1,11 @@
+#
+#Wed Aug 03 17:39:49 IRDT 2005
+configFile=/hamyar/src/hibernate.cfg.xml
+libInstallFolder=/WebRoot/WEB-INF/lib
+addLibs2Classpath=false
+addLibs2Project=true
+createConfigFile=true
+keyGenerator=
+version=3.0
+basePersistenceClass=
+useJavaTypes=false
