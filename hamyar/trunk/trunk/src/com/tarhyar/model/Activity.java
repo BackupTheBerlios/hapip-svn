@@ -12,7 +12,7 @@ import java.util.Set;
 public class Activity extends Step {
 
     Set<Resource> resources;
-
+    
     public Activity(){}
 
     public String getDiscriminator() {
@@ -27,5 +27,6 @@ public class Activity extends Step {
     public void setResources(Set<Resource> resources) {
         this.resources = resources;
     }
+
 
 }
