@@ -9,10 +9,20 @@ package com.tarhyar.model;
  */
 public class Project  extends Step{
 
+    private   Person manager;
 
     public String getDiscriminator() {
         return "PROJECT";
     }
 
-    
+
+    public Person getManager() {
+        return manager;
+    }
+
+    public void setManager(Person manager) {
+        this.manager = manager;
+    }
+
+
 }

@@ -185,6 +185,7 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/WebRoot/WebRoot.iml" filepath="$PROJECT_DIR$/WebRoot/WebRoot.iml" />
       <module fileurl="file://$PROJECT_DIR$/src/java.iml" filepath="$PROJECT_DIR$/src/java.iml" />
     </modules>
   </component>
@@ -200,6 +201,7 @@
     <option name="autoscrolling" value="false" />
   </component>
   <component name="libraryTable" />
+  <component name="org.tmatesoft.tmate.projectComponent" />
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="true" />
     <option name="COPY_FORMS_RUNTIME_TO_OUTPUT" value="true" />
