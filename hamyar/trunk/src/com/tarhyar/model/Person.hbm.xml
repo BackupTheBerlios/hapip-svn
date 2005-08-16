@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+                        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping>
+    <class  name="Person"   table="PERSON" >
+        <id name="id" column="PERSON_ID" type="long">
+            <generator class="native"/>
+        </id>
+        <property name="firstname" column="FIRSTNAME"/>
+        <property name="lastname" column="LASTNAME"/>
+        <property name="phoneNumber" column="PHONENUMBER"/>
+        <property name="address" column="ADDRESS"/>
+        <many-to-one name="city" class="City" column="CITY_ID"/>
+
+
+
+    </class>
+</hibernate-mapping>
