@@ -69,6 +69,4 @@
 
             </h:panelGroup>
 
-</body>
-
 </html>
