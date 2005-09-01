@@ -58,6 +58,14 @@
         <managed-bean-class>org.apache.myfaces.examples.misc.TestRadioButton</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <!-- managed bean for Documents-->
+
+    <managed-bean>
+        <managed-bean-name>document</managed-bean-name>
+        <managed-bean-class>com.tarhyar.model.Document</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+
+    </managed-bean>
 
 
 
@@ -89,7 +97,15 @@
         <navigation-case>
             <from-outcome>nav_tab</from-outcome>
             <to-view-id>/tab.jsp</to-view-id>
-        </navigation-case>		
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>project_view</from-outcome>
+            <to-view-id>/viewProject.jsp</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>nav_createDocument</from-outcome>
+            <to-view-id>/document/createDocument.jsp</to-view-id>
+        </navigation-case>
   </navigation-rule>
 
 	<navigation-rule>

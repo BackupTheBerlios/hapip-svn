@@ -7,7 +7,7 @@
  %><!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html dir="RTL">
  <%@include file="/inc/head.inc"%>
-<f:loadBundle basename="org.apache.myfaces.examples.resource.example_messages" var="example_messages"/>
+<f:loadBundle basename="com.tarhyar.resources.example_messages" var="example_messages"/>
  <f:view>
 <body>
     <x:panelLayout id="page" layout="#{globalOptions.pageLayout}"
