@@ -17,6 +17,7 @@ public abstract  class Step {
     private String name;
     private String nickname;
     private boolean isSummery;
+    
     private Date startDate;
     private Date endDate;
     private Resource primaryResource;

@@ -1,5 +1,7 @@
 package com.tarhyar.model;
 
+import java.util.Set;
+
 /**
  * Created by IntelliJ IDEA.
  * User: as
@@ -9,9 +11,9 @@ package com.tarhyar.model;
  */
 public class Resource {
     private long id;
-    private String type;
     private String name;
     private float available;
+    private Set activities;
 
 
     public String getName() {
@@ -22,14 +24,6 @@ public class Resource {
         this.name = name;
     }
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
-
     public long getId() {
         return id;
     }
@@ -38,5 +32,19 @@ public class Resource {
         this.id = id;
     }
 
+    public float getAvailable() {
+        return available;
+    }
 
+    public void setAvailable(float available) {
+        this.available = available;
+    }
+
+    public Set getActivities() {
+        return activities;
+    }
+
+    public void setActivities(Set activities) {
+        this.activities = activities;
+    }
 }

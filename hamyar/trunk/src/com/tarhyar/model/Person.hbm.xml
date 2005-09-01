@@ -4,7 +4,7 @@
 
 
 <hibernate-mapping>
-    <class  name="Person"   table="PERSON" >
+    <class  name="com.tarhyar.model.Person"   table="PERSON" >
         <id name="id" column="PERSON_ID" type="long">
             <generator class="native"/>
         </id>
@@ -12,7 +12,7 @@
         <property name="lastname" column="LASTNAME"/>
         <property name="phoneNumber" column="PHONENUMBER"/>
         <property name="address" column="ADDRESS"/>
-        <many-to-one name="city" class="City" column="CITY_ID"/>
+        <!--<many-to-one name="city" class="City" column="CITY_ID"/>-->
 
 
 
