@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM
+                        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+
+<hibernate-mapping>
+    <class  name="com.tarhyar.model.Resource"   table="RESOURCE" >
+        <id name="id" column="RESOURCE_ID" type="long">
+            <generator class="native"/>
+        </id>
+        <property name="name" column="NAME"/>
+        <property name="available" column="AVAILABLE" />
+        <set name="activities" table="ACTIVITY_RESOURCE">
+            <key column="RESOURCE_ID"></key>
+            <many-to-many class="com.tarhyar.model.Activity"  column="ACTIVITY_ID" outer-join="true"/>
+        </set>
+    </class>
+</hibernate-mapping>
