@@ -1,5 +1,7 @@
 package com.tarhyar.model;
 
+import com.tarhyar.dao.ProjectDAO;
+
 import java.util.Vector;
 
 /**
@@ -66,5 +68,7 @@ public class Document {
     public void setProjectId(long projectId) {
         this.projectId = projectId;
     }
+
+
 
 }

@@ -8,6 +8,7 @@
 <html dir="RTL">
  <%@include file="/inc/head.inc"%>
 <f:loadBundle basename="com.tarhyar.resources.example_messages" var="example_messages"/>
+<f:loadBundle basename="com.tarhyar.resources.messages" var="messages"/>
  <f:view>
 <body>
     <x:panelLayout id="page" layout="#{globalOptions.pageLayout}"

@@ -1,5 +1,9 @@
 package com.tarhyar.model;
 
+import org.apache.commons.logging.impl.LogFactoryImpl;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 /**
  * Created by IntelliJ IDEA.
  * User: as
@@ -8,8 +12,9 @@ package com.tarhyar.model;
  * To change this template use File | Settings | File Templates.
  */
 public class Person {
-
+    private static Log log = LogFactory.getLog(Person.class);
     private long id;
+    private static String discriminator="PERSON";
     private String firstname;
     private String lastname;
     private String phoneNumber;
@@ -29,6 +34,7 @@ public class Person {
     }
 
     public String getFirstname() {
+        log.info("getting first name");
         return firstname;
     }
 
@@ -37,6 +43,7 @@ public class Person {
     }
 
     public String getLastname() {
+        log.info("get the lastname");
         return lastname;
     }
 
@@ -66,5 +73,9 @@ public class Person {
 
     public void setCity(long city) {
         this.city = city;
+    }
+
+    public static String getDiscriminator() {
+        return discriminator;
     }
 }

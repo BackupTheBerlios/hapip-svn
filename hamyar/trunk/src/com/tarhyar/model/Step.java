@@ -15,6 +15,7 @@ public abstract  class Step {
     private long id;
     private String discriminator;
     private String name;
+    private String description;
     private String nickname;
     private boolean isSummery;
     
@@ -112,6 +113,14 @@ public abstract  class Step {
 
     public void setBudget(float budget) {
         this.budget = budget;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 

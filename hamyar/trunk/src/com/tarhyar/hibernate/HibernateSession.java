@@ -22,7 +22,7 @@ public class HibernateSession {
      * <code>CONFIG_FILE_LOCATION = "/hibernate.conf.xml". 
      * CONFIG_FILE_LOCATION = "/com/foo/bar/myhiberstuff.conf.xml".</code> 
      */
-    private static String CONFIG_FILE_LOCATION = "/hibernate.cfg.xml";
+    private static String CONFIG_FILE_LOCATION = "/com/tarhyar/hibernate.cfg.xml";
 
     /** Holds a single instance of Session */
     private static final ThreadLocal threadLocal = new ThreadLocal();

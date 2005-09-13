@@ -88,6 +88,125 @@
         <param-value>/WEB-INF/tiles.xml</param-value>
     </context-param>
 
+         <filter>
+        <filter-name>AccessFilter</filter-name>
+                 <description>access filter</description>
+                <filter-class>net.sf.jguard.filters.AccessFilter</filter-class>
+        <!--global settings -->
+        <!--global settings -->
+                <!-- authentication settings -->
+                <init-param>
+                        <param-name>loginField</param-name>
+                        <param-value>login</param-value>
+                        <description>form's field which contains login value</description>
+                </init-param>
+                <init-param>
+                        <param-name>passwordField</param-name>
+                        <param-value>password</param-value>
+                        <description>form's field which contains password value</description>
+                </init-param>
+                <init-param>
+                        <param-name>indexURI</param-name>
+                        <param-value>/hamyar/index.jsp</param-value>
+                        <description>page to redirect if authentication success</description>
+                </init-param>
+                <init-param>
+                        <param-name>authenticationFailedURI</param-name>
+                        <param-value>/hamyar/AuthenticationFailed.jsp</param-value>
+                        <description>page to redirect if authentication failed</description>
+                </init-param>
+                <init-param>
+                        <param-name>logonURI</param-name>
+                        <param-value>/hamyar/Logon.jsp</param-value>
+                        <description>page with authentication form</description>
+                </init-param>
+                <init-param>
+                        <param-name>logonProcessURI</param-name>
+                        <param-value>/hamyar/LogonProcess.do</param-value>
+                        <description>ressource accessed when you try to authenticate</description>
+                </init-param>
+ <init-param>
+                        <param-name>logoffURI</param-name>
+                        <param-value>/hamyar/Logoff.jsf</param-value>
+                        <description>uri to logoff</description>
+                </init-param>
+                <init-param>
+                        <param-name>accessDeniedURI</param-name>
+                        <param-value>/hamyar/AccessDenied.jsf</param-value>
+                        <description>page to redirect if access to the rssource is denied</description>
+                </init-param>
+        <init-param>
+                        <param-name>loginModules</param-name>
+                        <param-value>net.sf.jguard.loginmodules.XmlLoginModule</param-value>
+                        <description>loginModules used for authentication, and splitted with the ',' character</description>
+                </init-param>
+                <init-param>
+                        <param-name>net.sf.jguard.loginmodules.XmlLoginModule.Flag</param-name>
+                        <param-value>REQUIRED</param-value>
+                        <description>flag corresponding to the first loginModule. each loginModule defined
+                        above must have his own Flag which can be 'REQUIRED','OPTIONAL','REQUISITE',
+                        or 'SUFFICIENT'</description>
+                </init-param>
+                <init-param>
+                        <param-name>net.sf.jguard.loginmodules.XmlLoginModule.Options</param-name>
+                        <param-value>debug="false",fileLocation="file:///home/as/install/jakarta-tomcat-5.0.30/webapps/hamyar/WEB-INF/conf/jGuard/jGuardUsersRoles.xml"</param-value>
+            <!--<param-name>net.sf.jguard.loginmodules.OracleLoginModule.Options</param-name>
+                        <param-value>authenticationUrl="jdbc:oracle:thin:@localhost:1521:dbschema",authenticationLogin="charles",authenticationPassword="charles",authenticationDriver="oracle.jdbc.driver.OracleDriver"</param-value>-->
+            <description>options related to one of the loginModule defined in the 'loginModules' init parameters</description>
+                </init-param>
+                <!-- authentication settings -->
+                <!-- authorization settings -->
+                <init-param>
+                        <param-name>authorizationManager</param-name>
+            <!--<param-value>net.sf.jguard.authorization.PostgreSQLAuthorizationManager</param-value>-->
+                         <!--<param-value>net.sf.jguard.authorization.OracleAuthorizationManager</param-value>-->
+                        <!--<param-value>net.sf.jguard.authorization.MySQLAuthorizationManager</param-value>-->
+                        <param-value>net.sf.jguard.authorization.XmlAuthorizationManager</param-value>
+                        <description>class which handle to collect permissionsCollection</description>
+                </init-param>
+                <!-- XmlAuthorizationManager parameter -->
+                <init-param>
+                        <param-name>fileLocation</param-name>
+                        <param-value>file:///home/as/install/jakarta-tomcat-5.0.30/webapps/hamyar/WEB-INF/conf/jGuard/jGuardPrincipalsPermissions.xml</param-value>
+                        <description>xml file Location</description>
+                </init-param>
+                <init-param>
+                        <param-name>authorizationDriver</param-name>
+                        <!--<param-value>org.postgresql.Driver</param-value>-->
+                        <param-value>com.mysql.jdbc.Driver</param-value>
+                        <!--<param-value>oracle.jdbc.driver.OracleDriver</param-value>-->
+                        <description>jdbc driver for authorizations</description>
+                </init-param>
+                <init-param>
+                        <param-name>authorizationUrl</param-name>
+                        <!--<param-value>jdbc:postgresql://192.168.0.2:5434/DIABOLO</param-value>-->
+                        <param-value>jdbc:mysql://127.0.0.1:3306/diabolo</param-value>
+                        <!--<param-value>jdbc:oracle:thin:@CARTHAGE.mshome.net:1521:bea</param-value>-->
+                        <description>jdbc url for authorizations</description>
+                </init-param>
+                <init-param>
+                        <param-name>authorizationLogin</param-name>
+                        <!--<param-value>postgres</param-value>-->
+                        <param-value>charles</param-value>
+                        <!--<param-value>system</param-value>-->
+                        <description>login to establish authorizations connection</description>
+                </init-param>
+                <init-param>
+                        <param-name>authorizationPassword</param-name>
+                                 <!--<param-value>JBOARD</param-value>-->
+                        <param-value>charles</param-value>
+                        <!--<param-value>charles</param-value>-->
+                        <description>password to establish authorizations connection</description>
+                </init-param>
+                <init-param>
+                        <param-name>debug</param-name>
+                        <param-value>true</param-value>
+                        <description>enable debug with true to trace authorization settings</description>
+                </init-param>
+                <!-- authorization settings -->
+  </filter>
+
+
 
     <filter>
         <filter-name>extensionsFilter</filter-name>
@@ -122,6 +241,10 @@
             </description>
         </init-param>-->
     </filter>
+    <filter>
+        <filter-name>hibernateFilter</filter-name>
+        <filter-class>com.tarhyar.filter.HibernateFilter</filter-class>
+    </filter>
 
     <filter-mapping>
         <filter-name>extensionsFilter</filter-name>
@@ -130,6 +253,10 @@
     <filter-mapping>
         <filter-name>extensionsFilter</filter-name>
         <url-pattern>/faces/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>hibernateFilter</filter-name>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
 
 

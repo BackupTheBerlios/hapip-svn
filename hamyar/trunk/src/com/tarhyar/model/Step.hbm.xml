@@ -4,7 +4,7 @@
 
 
 <hibernate-mapping>
-    <class name="Step" table="STEP" discriminator-value="NA">
+    <class name="com.tarhyar.model.Step" table="STEP" discriminator-value="NA">
         <id name="id" column = "STEP_ID" type="long" >
             <generator class="native"/>
         </id>
@@ -16,21 +16,15 @@
         <property name="startDate" type="timestamp" column="START_DATE" />
         <property name="endDate"   type="timestamp" column="END_DATE" />
         <property name="budget"/>
-        <subclass name="Task" discriminator-value="TASK">
-            <set name="resources" >
-                <key column="RESOURCE_ID"/>
-                <one-to-many class="Resource"/>
-            </set>
+        <subclass name="com.tarhyar.model.Project" discriminator-value="PROJECT">
+            <many-to-one name="manager" column="PERSON_ID" class="com.tarhyar.model.Person"/>
         </subclass>
-        <subclass name="project" discriminator-value="PROJECT">
-            <many-to-one name="person" column="PERSON_ID" class="Person"/>
-        </subclass>
-        <subclass name="activity" discriminator-value="ACTIVITY">
-            <set name="resources"   table="activity_resource">
+        <subclass name="com.tarhyar.model.Activity" discriminator-value="ACTIVITY">
+            <set name="resources"   table="ACTIVITY_RESOURCE">
                 <key column="ACTIVITY_ID" ></key>
-                <many-to-many column="RESOURCE_ID" outer-join="true" class="Resource"></many-to-many>
+                <many-to-many column="RESOURCE_ID" outer-join="true" class="com.tarhyar.model.Resource"></many-to-many>
             </set>
         </subclass>
-        
+
     </class>
 </hibernate-mapping>

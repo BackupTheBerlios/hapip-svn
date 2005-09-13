@@ -11,9 +11,12 @@ package com.tarhyar.dao;
 import com.tarhyar.hibernate.persistence.HibernateUtil;
 import com.tarhyar.hibernate.exceptions.InfrastructureException;
 import com.tarhyar.model.Person;
+import com.tarhyar.model.Manager;
 import org.hibernate.Session;
 import org.hibernate.LockMode;
 import org.hibernate.HibernateException;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.criterion.Example;
 
 import java.util.Collection;
 
@@ -72,4 +75,28 @@ public class PersonDAO {
             throw new InfrastructureException(ex);
         }
     }
+
+    public Collection <Manager> findManagers() {
+        Session session = HibernateUtil.getSession();
+        Collection <Manager> managers;
+        try {
+            managers = session.createCriteria(Manager.class).list();
+        } catch(HibernateException ex) {
+            throw new InfrastructureException(ex);
+        }
+        return managers;
+    }
+
+    public Collection<Manager> findManagers(Manager aManager) {
+        Session session = HibernateUtil.getSession();
+        Collection <Manager> managers;
+        try {
+            managers = session.createCriteria(Manager.class).
+                    add(Example.create(aManager)).list();
+       } catch( HibernateException ex) {
+            throw new InfrastructureException(ex);
+       }
+        return managers;
+    }
+
 }

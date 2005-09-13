@@ -2,7 +2,6 @@
 <!DOCTYPE hibernate-mapping SYSTEM
                         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
 
-
 <hibernate-mapping>
     <class  name="com.tarhyar.model.Resource"   table="RESOURCE" >
         <id name="id" column="RESOURCE_ID" type="long">

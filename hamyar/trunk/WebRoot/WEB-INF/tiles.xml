@@ -68,6 +68,9 @@
     <definition name="/createDocument.tiles" extends="layout.example">
         <put name="body" value="/document/createDocument.jsp"/>
     </definition>
+    <definition name="/createProject.tiles" extends="layout.example">
+        <put name="body" value="/project/createProject.jsp"/>
+    </definition>
 <!-- workaround for non-tiles JSF pages-->
 <!--    <definition name="non.tiles1" path="/non-tile.jsp" />	-->
 

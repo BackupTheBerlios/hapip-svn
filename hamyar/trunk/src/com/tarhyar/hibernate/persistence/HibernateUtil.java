@@ -134,7 +134,9 @@ public class HibernateUtil {
      */
     public static void closeSession()
         throws InfrastructureException {
+        System.out.println("closing the session");
         try {
+
             Session s = threadSession.get();
             threadSession.set(null);
             if (s != null && s.isOpen()) {

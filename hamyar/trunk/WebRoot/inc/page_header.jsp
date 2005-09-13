@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsf/core" prefix="f"%>
 <%@ taglib uri="http://myfaces.apache.org/extensions" prefix="x"%>
 
-    <f:loadBundle basename="org.apache.myfaces.examples.resource.example_messages" var="example_messages"/>
+    <%--<f:loadBundle basename="org.apache.myfaces.examples.resource.example_messages" var="example_messages"/>--%>
 
 <h:panelGrid id="header_group1" columns="2" styleClass="pageHeader1"  >
     <h:graphicImage id="header_logo" url="images/logo_mini.jpg" alt="#{example_messages['alt_logo']}" />
